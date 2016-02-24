@@ -24,3 +24,6 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+Unity Stryfe/Library/ShaderCache/
+Unity Stryfe/Library/metadata/
+Unity Stryfe/Temp/

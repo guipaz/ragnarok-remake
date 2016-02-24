@@ -1,0 +1,15 @@
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\Assembly-CSharp.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\Unity.Newtonsoft.Json.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\UnityEditor.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\UnityEngine.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\UnityEngine.UI.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\Mono.Cecil.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\Unity.DataContract.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\Unity.CecilTools.dll
+D:\Dev\unity-stryfe\Unity Stryfe\obj\Debug\Assembly-CSharp.dll
+D:\Dev\unity-stryfe\Unity Stryfe\obj\Debug\Assembly-CSharp.pdb
+D:\Dev\unity-stryfe\Unity Stryfe\Temp\bin\Debug\UnityEditor.iOS.Extensions.Xcode.dll
+D:\Dev\unity-stryfe\Unity Stryfe\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
