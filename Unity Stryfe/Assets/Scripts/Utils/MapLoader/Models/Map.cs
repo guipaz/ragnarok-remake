@@ -79,5 +79,11 @@ namespace MapLoader.Models
                 node.FCost = 0;
             }
         }
+
+        public Vector3 GetWorldPosition(Vector2 pos)
+        {
+            float height = GetTileHeight(pos) * MapManager.HeightStage;
+            return new Vector3(pos.x + 0.5f, height + 0.5f, pos.y + 0.5f);
+        }
     }
 }

@@ -29,8 +29,7 @@ namespace MapLoader
             // Builds the mesh
             BuildMesh(CurrentMap);
         }
-
-        //TEST
+        
         private void BuildMesh(Map map)
         {
             GameObject obj = new GameObject(map.Name, typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));

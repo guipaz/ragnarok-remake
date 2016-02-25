@@ -22,5 +22,20 @@ namespace Assets.Scripts.Controllers.Pathfinding
             Adjacents = new Dictionary<PathNode, int>();
             Passable = passable;
         }
+
+        public List<Vector2> GetSteps()
+        {
+            List<Vector2> steps = new List<Vector2>();
+            PathNode node = this;
+            while (node != null)
+            {
+                steps.Add(node.Position);
+                node = node.Parent;
+            }
+                
+            steps.Reverse();
+            steps.RemoveAt(0); // removes the first, where it's starting
+            return steps;
+        }
     }
 }
