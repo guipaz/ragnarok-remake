@@ -34,7 +34,10 @@ public class CharacterController : MonoBehaviour {
 
     // Animation control
     private float timeStartedLerp;
-    private float timeTakenDuringLerp = 1 / 4.5f;
+    private float timeTakenDuringLerp;
+
+    private float timeTakenPerpendicularly = 1 / 4.5f;
+    private float timeTakenDiagonally = 1 / 3f;
     private Animator animator;
 
     /*
@@ -48,8 +51,8 @@ public class CharacterController : MonoBehaviour {
         6 - Right
         7 - Bottom Right
     */
-    private int direction; // this is gonna be a bitch
-    
+    public FacingDirection direction; // this is gonna be a bitch
+    public FacingDirection rotatedDirection;
 
     // Animator parameters (better const this shit out)
     private const string WalkingParam = "Walking";
@@ -58,6 +61,7 @@ public class CharacterController : MonoBehaviour {
     public void Awake()
     {
         animator = GetComponent<Animator>();
+        timeTakenDuringLerp = timeTakenPerpendicularly;
     }
 
 	// Update is called once per frame
@@ -103,11 +107,20 @@ public class CharacterController : MonoBehaviour {
                     nextDestination = MapManager.CurrentMap.GetWorldPosition(steps[0]);
 
                     // Sets the direction for the animator
-                    direction = (int)GetDirection(new Vector2((int)previousPosition.x, (int)previousPosition.z),
+                    direction = GetDirection(new Vector2((int)previousPosition.x, (int)previousPosition.z),
                                                   steps[0]);
-
+                    if (direction == FacingDirection.BottomLeft ||
+                        direction == FacingDirection.BottomRight ||
+                        direction == FacingDirection.UpperLeft ||
+                        direction == FacingDirection.UpperRight)
+                    {
+                        timeTakenDuringLerp = timeTakenDiagonally;
+                    } else
+                    {
+                        timeTakenDuringLerp = timeTakenPerpendicularly;
+                    }
+                    
                     steps.RemoveAt(0);
-
                     timeStartedLerp = Time.time;
                 }
                 else
@@ -142,16 +155,17 @@ public class CharacterController : MonoBehaviour {
             clickCooldownLeft -= Time.deltaTime;
         }
 
-        //TODO: encapsulate this
-        animator.SetBool(WalkingParam, isWalking);
-        animator.SetInteger(DirectionParam, direction);
+        UpdateAnimator();
     }
 
-    // Gotta do some magic here, this is gonna be tricky regarding the camera
-    // I will ignore camera for now since it'll be hell
-    //
-    // If I do some shit, just say it in the chat and I'll be happy to fix it haha
-    //
+    public void UpdateAnimator()
+    {
+        rotatedDirection = Camera.main.GetComponent<CameraController>().GetRotatedDirection(direction);
+
+        animator.SetBool(WalkingParam, isWalking);
+        animator.SetInteger(DirectionParam, (int)rotatedDirection);
+    }
+    
     private FacingDirection GetDirection(Vector2 curPos, Vector2 nextPos)
     {
         FacingDirection dir = 0;
@@ -186,9 +200,7 @@ public class CharacterController : MonoBehaviour {
                 dir = FacingDirection.Bottom; // Bottom
             else
                 dir = (FacingDirection)direction;
-
-        Debug.Log(dir);
-
+        
         return dir;
     }
 }

@@ -1,10 +1,54 @@
 fileFormatVersion: 2
 guid: f616356b31b1a1a4a89c1443004c7ec5
-timeCreated: 1456406558
+timeCreated: 1456443027
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: sprites_assassin_0
+    21300000: assassin_stand_bottom
+    21300002: assassin_stand_diag_d
+    21300004: assassin_stand_horizontal
+    21300006: assassin_stand_diag_up
+    21300008: assassin_stand_up
+    21300010: assassin_walk_down_1
+    21300012: assassin_walk_down_2
+    21300014: assassin_walk_down_3
+    21300016: assassin_walk_down_4
+    21300018: assassin_walk_down_5
+    21300020: assassin_walk_down_6
+    21300022: assassin_walk_down_7
+    21300024: assassin_walk_down_8
+    21300026: assassin_walk_diagdown_1
+    21300028: assassin_walk_diagdown_2
+    21300030: assassin_walk_diagdown_3
+    21300032: assassin_walk_diagdown_4
+    21300034: assassin_walk_diagdown_5
+    21300036: assassin_walk_diagdown_6
+    21300038: assassin_walk_diagdown_7
+    21300040: assassin_walk_diagdown_8
+    21300042: assassin_walk_horizontal_1
+    21300044: assassin_walk_horizontal_2
+    21300046: assassin_walk_horizontal_3
+    21300048: assassin_walk_horizontal_4
+    21300050: assassin_walk_horizontal_5
+    21300052: assassin_walk_horizontal_6
+    21300054: assassin_walk_horizontal_7
+    21300056: assassin_walk_horizontal_8
+    21300058: assassin_walk_diagup_1
+    21300060: assassin_walk_diagup_2
+    21300062: assassin_walk_diagup_3
+    21300064: assassin_walk_diagup_4
+    21300066: assassin_walk_diagup_5
+    21300068: assassin_walk_diagup_6
+    21300070: assassin_walk_diagup_7
+    21300072: assassin_walk_diagup_8
+    21300074: assassin_walk_up_1
+    21300076: assassin_walk_up_2
+    21300078: assassin_walk_up_3
+    21300080: assassin_walk_up_4
+    21300082: assassin_walk_up_5
+    21300084: assassin_walk_up_6
+    21300086: assassin_walk_up_7
+    21300088: assassin_walk_up_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -50,13 +94,453 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: sprites_assassin_0
+    - name: assassin_stand_bottom
       rect:
         serializedVersion: 2
         x: 0
         y: 619
         width: 42
         height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_stand_diag_d
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 620
+        width: 36
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_stand_horizontal
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 620
+        width: 36
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_stand_diag_up
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 620
+        width: 40
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_stand_up
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 619
+        width: 41
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_1
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 621
+        width: 41
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_2
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 622
+        width: 39
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_3
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 623
+        width: 42
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_4
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 618
+        width: 41
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_5
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 622
+        width: 39
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 623
+        width: 37
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_7
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 623
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_down_8
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 618
+        width: 41
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 625
+        width: 35
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_2
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 623
+        width: 40
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 623
+        width: 43
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_4
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 619
+        width: 44
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_5
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 621
+        width: 37
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_6
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 625
+        width: 43
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 548
+        width: 50
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagdown_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 543
+        width: 40
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_1
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 545
+        width: 33
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_2
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 544
+        width: 51
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_3
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 547
+        width: 53
+        height: 71
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_4
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 546
+        width: 46
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_5
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 543
+        width: 35
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_6
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 544
+        width: 52
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_7
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 545
+        width: 50
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_horizontal_8
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 547
+        width: 39
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_1
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 545
+        width: 37
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_2
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 543
+        width: 42
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_3
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 545
+        width: 46
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_4
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 548
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_5
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 545
+        width: 39
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_6
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 541
+        width: 40
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_7
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 546
+        width: 43
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_diagup_8
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 468
+        width: 41
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 464
+        width: 38
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_2
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 460
+        width: 37
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_3
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 463
+        width: 38
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_4
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 468
+        width: 40
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_5
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 464
+        width: 37
+        height: 74
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_6
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 461
+        width: 38
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_7
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 463
+        width: 39
+        height: 76
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: assassin_walk_up_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 469
+        width: 41
+        height: 70
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
