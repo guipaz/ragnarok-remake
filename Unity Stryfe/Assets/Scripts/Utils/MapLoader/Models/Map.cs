@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Controllers.Pathfinding;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,19 @@ namespace MapLoader.Models
 {
     public class Map
     {
+        // Basic properties
         public string Name { get; set; }
-
         public int Width { get; set; }
         public int Height { get; set; }
 
+        // Resources
+        [JsonProperty(PropertyName = "object_ids")]
+        public Dictionary<int, string> ObjectIds { get; set; }
         public Dictionary<int, MapTexture> Textures { get; set; }
         public List<Tile> Tiles { get; set; }
+        public List<MapObject> Objects { get; set; }
         
+        // Pathfinding
         public Dictionary<Vector2, PathNode> Nodes { get; set; }
 
         public void CalculateUVs()

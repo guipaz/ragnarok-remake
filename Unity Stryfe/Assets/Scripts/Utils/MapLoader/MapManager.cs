@@ -9,6 +9,7 @@ namespace MapLoader
 {
     public class MapManager : MonoBehaviour
     {
+        public GameObject ParentMap { get; set; }
         public static Map CurrentMap { get; set; }
 
         public static int TileSize = 64;
@@ -21,21 +22,26 @@ namespace MapLoader
 
         public void BuildMap()
         {
+            DestroyImmediate(GameObject.Find("_LoadedMap"));
+            ParentMap = new GameObject("_LoadedMap");
+
             // Loads the map from the JSON
             CurrentMap = JsonConvert.DeserializeObject<Map>(File.ReadAllText("Assets/Resources/Maps/neo_prontera_2.json"));
             CurrentMap.CalculateUVs();
             CurrentMap.PopulatePathData();
 
-            // Builds the mesh
-            BuildMesh(CurrentMap);
+            // Setups the map
+            BuildMesh();
+            CreateObjects();
         }
         
-        private void BuildMesh(Map map)
+        private void BuildMesh()
         {
-            GameObject obj = new GameObject(map.Name, typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));
+            GameObject obj = new GameObject(CurrentMap.Name, typeof(MeshFilter), typeof(MeshRenderer), typeof(MeshCollider));
+            obj.transform.parent = ParentMap.transform;
 
-            int width = map.Width;
-            int height = map.Height;
+            int width = CurrentMap.Width;
+            int height = CurrentMap.Height;
 
             Mesh mesh = new Mesh();
 
@@ -46,11 +52,11 @@ namespace MapLoader
 
             // Define 0-index based ids for each texture id
             int index = 0;
-            foreach (int textureId in map.Textures.Keys)
+            foreach (int textureId in CurrentMap.Textures.Keys)
                 indexBySubmesh[textureId] = index++;
             
             // Gets the number of tiles in each submesh
-            foreach (Tile tile in map.Tiles)
+            foreach (Tile tile in CurrentMap.Tiles)
             {
                 if (tilesBySubmesh.ContainsKey(tile.TextureIdentifier))
                     tilesBySubmesh[tile.TextureIdentifier]++;
@@ -75,12 +81,12 @@ namespace MapLoader
             Vector2[] uvs = new Vector2[vertNumber];
             Vector3[] normals = new Vector3[vertNumber];
 
-            for (int i = 0; i < map.Tiles.Count; i++)
+            for (int i = 0; i < CurrentMap.Tiles.Count; i++)
             {
-                Tile tile = map.Tiles[i];
+                Tile tile = CurrentMap.Tiles[i];
 
-                int x = i % map.Width;
-                int z = i / map.Width;
+                int x = i % CurrentMap.Width;
+                int z = i / CurrentMap.Width;
 
                 int topLeft = z * 4 * width + x * 2;
                 int topRight = topLeft + 1;
@@ -92,7 +98,7 @@ namespace MapLoader
                 vertices[bottomLeft] = new Vector3(x, HeightStage * (tile.Bottom + tile.Left + tile.BottomLeft + tile.Stage), z + 1);
                 vertices[bottomRight] = new Vector3(x + 1, HeightStage * (tile.Bottom + tile.Right + tile.BottomRight + tile.Stage), z + 1);
 
-                TileUV tileUVs = map.Textures[tile.TextureIdentifier].UVs[tile.TileUVIdentifier];
+                TileUV tileUVs = CurrentMap.Textures[tile.TextureIdentifier].UVs[tile.TileUVIdentifier];
                 uvs[topLeft] = tileUVs.UV1;
                 uvs[topRight] = tileUVs.UV2;
                 uvs[bottomLeft] = tileUVs.UV3;
@@ -124,17 +130,28 @@ namespace MapLoader
             mesh.uv = uvs;
 
             // Defines the triangles and materials for each submesh
-            mesh.subMeshCount = map.Textures.Count;
+            mesh.subMeshCount = CurrentMap.Textures.Count;
             Material[] materials = new Material[mesh.subMeshCount];
             foreach (KeyValuePair<int, int[]> triangles in trianglesBySubmesh)
             {
                 mesh.SetTriangles(triangles.Value, indexBySubmesh[triangles.Key]);
-                materials[indexBySubmesh[triangles.Key]] = GetTexturedMaterial(map.Textures[triangles.Key].Name);
+                materials[indexBySubmesh[triangles.Key]] = GetTexturedMaterial(CurrentMap.Textures[triangles.Key].Name);
             }
 
             obj.GetComponent<MeshRenderer>().materials = materials;
             obj.GetComponent<MeshFilter>().mesh = mesh;
-            obj.GetComponent<MeshCollider>().sharedMesh = obj.GetComponent<MeshFilter>().mesh;
+            obj.GetComponent<MeshCollider>().sharedMesh = obj.GetComponent<MeshFilter>().sharedMesh;
+        }
+
+        private void CreateObjects()
+        {
+            foreach (MapObject obj in CurrentMap.Objects)
+            {
+                GameObject prefab = Instantiate(Resources.Load<GameObject>(string.Format("Objects/{0}", CurrentMap.ObjectIds[obj.PrefabId]))) as GameObject;
+                prefab.transform.position = new Vector3(obj.X, obj.Y, obj.Z);
+                prefab.transform.rotation = Quaternion.Euler(0, obj.Rotation, 0);
+                prefab.transform.parent = ParentMap.transform;
+            }
         }
 
         private Material GetTexturedMaterial(string textureName)
