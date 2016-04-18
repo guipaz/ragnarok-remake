@@ -1,1 +1,3 @@
-# unity-stryfe
+# Ragnarok Remake
+
+Playing with some Ragnarok mechanics.
